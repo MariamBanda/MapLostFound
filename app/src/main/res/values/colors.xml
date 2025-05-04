@@ -2,4 +2,22 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Primary colors -->
+    <color name="primaryColor">#6200EE</color> <!-- Purple -->
+    <color name="primaryVariantColor">#3700B3</color> <!-- Dark Purple -->
+    <color name="onPrimaryColor">#FFFFFF</color> <!-- White -->
+
+    <!-- Secondary colors -->
+    <color name="secondaryColor">#03DAC5</color> <!-- Teal -->
+    <color name="secondaryVariantColor">#018786</color> <!-- Dark Teal -->
+    <color name="onSecondaryColor">#000000</color> <!-- Black -->
+
+    <!-- Background color -->
+    <color name="windowBackground">#FFFFFF</color> <!-- White background -->
+
+    <!-- Additional colors -->
+    <color name="colorPrimary">#6200EE</color> <!-- Primary color used for elements like the action bar -->
+    <color name="colorPrimaryDark">#3700B3</color> <!-- Darker shade of the primary color for status bar -->
+    <color name="colorAccent">#03DAC5</color> <!-- Accent color used for floating action button, etc. -->
+
 </resources>

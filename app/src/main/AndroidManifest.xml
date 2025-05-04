@@ -1,6 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.prac.lostfound">
+
+    <!-- Required permissions for using the device's location and internet -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +18,18 @@
         android:theme="@style/Theme.Lostfound"
         tools:targetApi="31">
 
+        <!-- Correct metadata for Google Maps API key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC3_HLYla5BTleM0Fu-vCeTrW8b_EY9_iE" />
+
+
+        <!-- Add the activities for your app -->
         <activity android:name=".ItemDetailActivity" />
         <activity android:name=".ViewItemsActivity" />
         <activity android:name=".CreateAdvertActivity" />  <!-- Add this line -->
 
+        <!-- Main activity (launcher activity) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -26,7 +39,8 @@
             </intent-filter>
         </activity>
 
+        <!-- MapsActivity (add this line if you're using Google Maps) -->
+        <activity android:name=".MapsActivity" />
     </application>
-
 
 </manifest>

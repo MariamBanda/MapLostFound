@@ -9,24 +9,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnCreateAdvert, btnShowItems;
+    private Button btnCreateAdvert, btnShowItems, btnShowOnMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize buttons
         btnCreateAdvert = findViewById(R.id.btnCreateAdvert);
         btnShowItems = findViewById(R.id.btnShowItems);
+        btnShowOnMap = findViewById(R.id.btnShowOnMap);
 
-
-        if (btnCreateAdvert == null || btnShowItems == null) {
+        if (btnCreateAdvert == null || btnShowItems == null || btnShowOnMap == null) {
             Toast.makeText(this, "Error: Buttons not found!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Button click listener to create a new advert
         btnCreateAdvert.setOnClickListener(v -> {
             try {
                 Intent intent = new Intent(MainActivity.this, CreateAdvertActivity.class);
@@ -37,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Button click listener to show all lost and found items
         btnShowItems.setOnClickListener(v -> {
             try {
                 Intent intent = new Intent(MainActivity.this, ViewItemsActivity.class);
@@ -45,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
                 Toast.makeText(this, "Failed to open ViewItemsActivity", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnShowOnMap.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Failed to open MapActivity", Toast.LENGTH_SHORT).show();
             }
         });
     }

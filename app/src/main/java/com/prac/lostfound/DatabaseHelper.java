@@ -56,19 +56,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Advert advert = new Advert(
-                    cursor.getInt(0),
-                    cursor.getString(1),
-                    cursor.getString(2),
-                    cursor.getString(3),
-                    cursor.getString(4),
-                    cursor.getString(5),
-                    cursor.getString(6)
+                    cursor.getInt(0), // id
+                    cursor.getString(1), // postType
+                    cursor.getString(2), // name
+                    cursor.getString(3), // phone
+                    cursor.getString(4), // description
+                    cursor.getString(5), // date
+                    cursor.getString(6)  // location
                 );
                 list.add(advert);
             } while (cursor.moveToNext());
         }
         cursor.close();
         return list;
+    }
+
+    public Cursor getAllAdvertsCursor() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
     }
 
     public void deleteAdvert(int id) {

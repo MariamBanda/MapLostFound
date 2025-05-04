@@ -66,6 +66,14 @@
             android:hint="Location"
             android:layout_marginTop="8dp"/>
 
+
+        <Button
+            android:id="@+id/btnGetCurrentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use Current Location"
+            android:layout_marginTop="8dp"/>
+
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
@@ -74,7 +82,5 @@
             android:layout_marginTop="24dp"
             android:onClick="saveAdvert"/>
 
-
     </LinearLayout>
-
 </ScrollView>
